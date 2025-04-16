@@ -1,7 +1,7 @@
 // Ikoner
-const spelare = '<img src="/images/icon1.png" class="ikon">';
-const katt = '<img src="/images/icon2.png" class="ikon2">';
-const gurli = '<img src="/images/icon3.png" class="ikon3">';
+const spelare = '<img src="../images/icon1.png" class="ikon">';
+const katt = '<img src="../images/icon2.png" class="ikon2">';
+const gurli = '<img src="../images/icon3.png" class="ikon3">';
 
 let spelarPlats = 12;
 let kattPlats;
@@ -30,7 +30,7 @@ for (let i = 0; i < 25; i++) {
 vinnarPlats = bildkarta.findIndex((bild) => bild === "b3.png");
 
 function uppdateraSpelbild() {
-  spelbildElement.src = `/images/${bildkarta[spelarPlats]}`;
+  spelbildElement.src = `../images/${bildkarta[spelarPlats]}`;
 }
 
 window.onload = () => {
@@ -164,7 +164,7 @@ function visaKattVinst() {
 function startaFyrverkerier() {
   const container = document.getElementById("fyrverkeri-container");
 
-  if (fyrverkeriInterval) return; // redan aktiv
+  if (fyrverkeriInterval) return;
 
   fyrverkeriInterval = setInterval(() => {
     for (let i = 0; i < 5; i++) {
@@ -192,9 +192,3 @@ function slumpFärg() {
   const färger = ["#ff99c8", "#fcf6bd", "#d0f4de", "#a9def9", "#e4c1f9"];
   return färger[Math.floor(Math.random() * färger.length)];
 }
-
-
-
-
-
-
