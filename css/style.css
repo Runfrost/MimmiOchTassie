@@ -1,0 +1,352 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%;
+    width: 100%;
+  }
+  
+  body {
+    
+    font-family: 'Arial', sans-serif;
+  }
+  
+  
+  
+  .background {
+    background: url('../images/mimmi18.png') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .rubrik {
+    position: absolute;
+    top: -20%; 
+    left: 54%;
+    transform: translateX(-50%);
+    width: 800px; 
+    z-index: 10;
+  }
+
+  .rubrik2 {
+    position: absolute;
+    top: -23%; 
+    left: 54%;
+    transform: translateX(-50%);
+    width: 800px; 
+    z-index: 10;
+  }
+
+  .slogan {
+    position: absolute;
+    top: 30%; /* Justera vid behov */
+    left: 53%;
+    transform: translateX(-50%);
+    width: 60%;
+    background-color: rgba(255, 255, 255, 0.4); /* vit med transparens */
+    color: #333;
+    padding: 10px 20px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 17px;
+    z-index: 10;
+  }
+  
+  .start-knapp {
+    position: absolute;
+    top: 43%; /* justera vid behov */
+    left: 54%;
+    transform: translateX(-50%);
+    padding: 12px 30px;
+    font-size: 18px;
+    background-color: #FFBBA8;
+    color: #D57868;
+    border: 2px solid #D57868;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+  }
+  
+  .start-knapp:hover {
+    background-color: #e2a595;
+    color: rgb(255, 255, 255);
+    box-shadow: 0 0 10px #D57868;
+  }
+  
+
+
+
+  
+  .backgroundgame {
+    background: url('../images/1.png') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+  }
+  
+  .spelbild {
+    position: absolute;
+    top: 27%;
+    left: 28%;
+    width: 430px;
+    height: 300px;
+    object-fit: fill; /* 🔸 Fyll hela rutan utan att beskära eller bevara aspekt */
+    image-rendering: crisp-edges; /* 🔸 Viktigt för att minska pixlighet */
+    z-index: 5;
+    border: #e2a595 6px solid;
+    border-radius: 5px;
+  }
+  
+  
+  
+  .karta {
+    display: grid;
+    grid-template-columns: repeat(5, 50px);
+    grid-template-rows: repeat(5, 50px);
+    gap: 5px;
+    background-color: #e2a595;
+    padding: 10px;
+    border-radius: 10px;
+    position: absolute;
+    top: 27%;
+    left: 69%;
+    transform: translateX(-50%);
+  }
+  
+  .ruta {
+    width: 50px;
+    height: 50px;
+    background-color: #f9d3cc;
+    border: 2px solid #D57868;
+    border-radius: 6px;
+  }
+  
+  .ikon {
+    width: 36px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    margin-top: -2px;
+  }
+  
+  .ikon2 {
+    width: 43px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    margin-top: 3px;
+  }
+
+  .ikon3 {
+    width: 45px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    margin-top: 4px;
+  }
+
+  .knappbox {
+    position: absolute;
+    top: 72%;         /* flytta upp/ned – justera som du vill */
+    left: 69%;        /* flytta åt vänster/höger – justera fritt */
+    transform: translateX(-50%);
+    background-color: rgba(226, 165, 149, 0.4); /* samma färg som kartan med transparens */
+    padding: 12px 25px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 15;
+  }
+  
+  .knappbox h3 {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 8px;
+  }
+  
+  .knappar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .rad {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 5px 0;
+  }
+  
+  .riktning {
+    background-color: #f9d3cc; /* samma som rutorna */
+    border: 2px solid #D57868;
+    color: #D57868;
+    border-radius: 8px;
+    padding: 4px 30px;
+    margin: 3px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+  }
+  
+  .riktning:hover {
+    background-color: #D57868;
+    color: white;
+  }
+  
+  .regelruta {
+    position: absolute;
+    top: 72%;
+    left: 42%; /* Justera om du vill ha den mer höger eller vänster */
+    transform: translateX(-50%);
+    background-color: rgba(226, 165, 149, 0.3); /* mer transparent än knapparna */
+    padding: 18px 10px;
+    border-radius: 10px;
+    width: 430px;
+    font-size: 13px;
+    color: #333;
+    z-index: 15;
+    text-align: left;
+    line-height: 1.5;
+  }
+  
+  .regelruta h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #5c3b34;
+    text-align: center;
+  }
+  
+  .restartbox {
+    position: absolute;
+    top: 95%;         /* justera placering fritt */
+    left: 53%;
+    transform: translateX(-50%);
+    z-index: 20;
+  }
+  .restart-knapp {
+    padding: 5px 300px;
+    font-size: 13px;
+    background-color: rgba(213, 120, 104, 0.5); /* #D57868 med 80% opacitet */
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+  }
+  
+  .restart-knapp:hover {
+    background-color: rgba(226, 165, 149, 0.8); /* #e2a595 med 80% opacitet */
+    color: white;
+    box-shadow: 0 0 8px #D57868;
+  }
+  
+  
+  /* Popup-fönster (alla tre) */
+.gurlie-popup {
+  position: fixed;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px #D57868;
+  display: none;
+  z-index: 999;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+/* Popup-innehåll */
+.popup-innehåll {
+  text-align: center;
+  position: relative;
+}
+
+/* Alla popup-bilder */
+.popup-bild {
+  max-width: 100%;
+  max-height: 300px;
+  width: auto;
+  height: auto;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+  
+  .stäng-popup {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: #D57868;
+    color: white;
+    border-radius: 50%;
+    padding: 4px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 5px #D57868;
+  }
+  
+    
+  /* Fyrverkerier */
+#fyrverkeri-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.fyrverkeri {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  opacity: 1;
+  animation: smäll 1s ease-out forwards;
+}
+
+@keyframes smäll {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) scale(2);
+    opacity: 0;
+  }
+}
+
+.tillbaka-knapp {
+  position: absolute;
+  top: 2%;           
+  left: 1%;           
+  padding: 5px 5px;
+  font-size: 11px;
+  background-color: rgba(255, 187, 168, 0.4); /* 💡 60% opacitet */
+  color: #5c3b34;
+  border: 2px solid #D57868;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 0 8px rgba(213, 120, 104, 0.3);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.tillbaka-knapp:hover {
+  background-color: rgba(226, 165, 149, 0.8); /* 💡 lite tydligare vid hover */
+  color: white;
+  box-shadow: 0 0 12px #D57868;
+}
