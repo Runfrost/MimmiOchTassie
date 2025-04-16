@@ -4,15 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Spelplan</title>
-  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="../css/style.css" />
 </head>
 <body>
   <div class="backgroundgame">    
-    <img src="/images/rubrik2.png" alt="Mimmi & Tassie" class="rubrik2">
-    <img src="/images/b0.png" alt="Spelbild" class="spelbild" id="spelbilden">
+    <img src="../images/rubrik2.png" alt="Mimmi & Tassie" class="rubrik2">
+    <img src="../images/b0.png" alt="Spelbild" class="spelbild" id="spelbilden">
 
     <div class="karta">
       <!-- Alla rutor 0 till 24 -->
+      <!-- (du hade alla korrekt – behåller exakt som du skrev dem) -->
       <div class="ruta" id="ruta0"></div>
       <div class="ruta" id="ruta1"></div>
       <div class="ruta" id="ruta2"></div>
@@ -72,7 +73,7 @@
   <div class="gurlie-popup" id="gurliePopup">
     <div class="popup-innehåll">
       <span class="stäng-popup" id="stängX" onclick="stängPopup()" style="display:none;">✖</span>
-      <img src="/images/prata.png" alt="Gurlie pratar" class="popup-bild">
+      <img src="../images/prata.png" alt="Gurlie pratar" class="popup-bild">
       <p id="popupText">
         Gurlie stannar dig för att prata om sin älskade Tassie, som hon har tappat bort. Medan hon pratar känner du paniken växa, Tassie är redan två steg före...<br>
         <span id="nedräkning">5</span>
@@ -83,7 +84,7 @@
   <!-- Spelare vinner -->
   <div class="gurlie-popup" id="spelareVinnerPopup" style="display: none;">
     <div class="popup-innehåll">
-      <img src="/images/musspelare.png" class="popup-bild" alt="Spelare vann!">
+      <img src="../images/musspelare.png" class="popup-bild" alt="Spelare vann!">
       <p>Grattis, du vann! Mimmi tog fram sin minsta ostbit och firade med dig!<br> Tassie? Hon snubblade över en kvist.</p><br>
       <button class="restart-knapp" onclick="stoppaFyrverkerier(); window.location.reload();">Spela igen</button>
     </div>
@@ -92,7 +93,7 @@
   <!-- Katt vinner -->
   <div class="gurlie-popup" id="kattVinnerPopup" style="display: none;">
     <div class="popup-innehåll">
-      <img src="/images/muskatt.png" class="popup-bild" alt="Katt vann!">
+      <img src="../images/muskatt.png" class="popup-bild" alt="Katt vann!">
       <p>
         Tassie hann fram först och fann Mimmi under de blommande träden.<br>
         Strax därpå kom Gurli lättad och lycklig.<br>
@@ -106,10 +107,9 @@
   <div id="fyrverkeri-container"></div>
 
   <!-- Script -->
-  <script src="/script/start.js"></script>
+  <script src="start.js"></script>
+
+  <!-- Tillbaka-knapp -->
   <button class="tillbaka-knapp" onclick="location.href='../index.html'">Till startsidan</button>
-
-
-
 </body>
 </html>
