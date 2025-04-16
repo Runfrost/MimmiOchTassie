@@ -282,7 +282,7 @@
 }
 
   
-  .stäng-popup {
+  .stang-popup {
     position: absolute;
     top: -10px;
     right: -10px;
@@ -296,7 +296,7 @@
   }
   
     
-  /* Fyrverkerier */
+  
 #fyrverkeri-container {
   position: fixed;
   top: 0;
@@ -327,6 +327,8 @@
     opacity: 0;
   }
 }
+
+
 
 .tillbaka-knapp {
   position: absolute;

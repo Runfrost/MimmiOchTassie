@@ -3,6 +3,9 @@ const spelare = '<img src="../images/icon1.png" class="ikon">';
 const katt = '<img src="../images/icon2.png" class="ikon2">';
 const gurli = '<img src="../images/icon3.png" class="ikon3">';
 
+
+
+
 let spelarPlats = 12;
 let kattPlats;
 let gurliPlats;
@@ -10,9 +13,10 @@ let låst = false;
 let vinnarPlats;
 let fyrverkeriInterval = null;
 
+
 const spelbildElement = document.querySelector(".spelbild");
 
-// Startbild
+
 const startBild = "b0.png";
 
 // Övriga bilder
@@ -32,6 +36,9 @@ vinnarPlats = bildkarta.findIndex((bild) => bild === "b3.png");
 function uppdateraSpelbild() {
   spelbildElement.src = `../images/${bildkarta[spelarPlats]}`;
 }
+
+
+
 
 window.onload = () => {
   const rutor = document.querySelectorAll(".ruta");
@@ -59,12 +66,14 @@ window.onload = () => {
   uppdateraRutnät();
   uppdateraSpelbild();
 
+
+
   function flyttaFigur(plats) {
     const riktningar = [];
-    if (plats >= 5) riktningar.push(-5);
-    if (plats <= 19) riktningar.push(5);
-    if (plats % 5 !== 0) riktningar.push(-1);
-    if (plats % 5 !== 4) riktningar.push(1);
+    if (plats >= 5) riktningar.push(-5); // Upp
+    if (plats <= 19) riktningar.push(5); // Ner
+    if (plats % 5 !== 0) riktningar.push(-1); // Vänster
+    if (plats % 5 !== 4) riktningar.push(1); // Höger
 
     let nyPlats;
     do {
@@ -73,6 +82,8 @@ window.onload = () => {
     } while ([spelarPlats, gurliPlats, kattPlats].includes(nyPlats));
     return nyPlats;
   }
+
+
 
   window.flyttaSpelare = function (riktning) {
     if (låst) return;
@@ -85,24 +96,35 @@ window.onload = () => {
 
     if (nyPlats === kattPlats) return;
 
+
+
+
+
+    //Om man hamnar i samtal med Gurli
     if (nyPlats === gurliPlats) {
       låst = true;
       spelarPlats = nyPlats;
       uppdateraRutnät();
       uppdateraSpelbild();
       visaPopup();
-
+    
+      // Tassie flyttar sig 1 steg
       setTimeout(() => {
         kattPlats = flyttaFigur(kattPlats);
         uppdateraRutnät();
-        setTimeout(() => {
-          kattPlats = flyttaFigur(kattPlats);
-          uppdateraRutnät();
-          if (kattPlats === vinnarPlats) visaKattVinst();
-        }, 600);
-      }, 300);
+    
+        if (kattPlats === vinnarPlats) {
+          visaKattVinst();
+        }
+      }, 2000); // väntar i 2sek
+    
       return;
     }
+    
+
+
+
+
 
     spelarPlats = nyPlats;
     uppdateraSpelbild();
@@ -118,15 +140,19 @@ window.onload = () => {
   };
 };
 
-// ---------------- POPUPS ----------------
+
+
+
+
+//Popup Gurli
 
 function visaPopup() {
   const popup = document.getElementById("gurliePopup");
   const nedräkning = document.getElementById("nedräkning");
-  const stängX = document.getElementById("stängX");
+  const stangX = document.getElementById("stangX");
 
   popup.style.display = "block";
-  stängX.style.display = "none";
+  stangX.style.display = "none";
 
   let tid = 5;
   nedräkning.textContent = tid;
@@ -136,30 +162,40 @@ function visaPopup() {
     nedräkning.textContent = tid;
     if (tid === 0) {
       clearInterval(nedräknare);
-      stängX.style.display = "inline";
+      stangX.style.display = "inline";
     }
   }, 1000);
 }
 
-function stängPopup() {
+function stangPopup() {
   document.getElementById("gurliePopup").style.display = "none";
   låst = false;
 }
 
-// 🎉 Vinst för spelaren
+
+
+
+
+// Spelaren vinner
 function visaSpelarVinst() {
   document.getElementById("spelareVinnerPopup").style.display = "block";
   låst = true;
   startaFyrverkerier();
 }
 
-// 😿 Vinst för katten
+
+//Tassie vinner
 function visaKattVinst() {
   document.getElementById("kattVinnerPopup").style.display = "block";
   låst = true;
 }
 
-// ---------------- FYRVERKERI ----------------
+
+
+
+
+
+//Fyverkerier
 
 function startaFyrverkerier() {
   const container = document.getElementById("fyrverkeri-container");
