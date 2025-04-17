@@ -1,4 +1,4 @@
-// Ikoner
+
 const spelare = '<img src="../images/icon1.png" class="ikon">';
 const katt = '<img src="../images/icon2.png" class="ikon2">';
 const gurli = '<img src="../images/icon3.png" class="ikon3">';
@@ -31,7 +31,7 @@ for (let i = 0; i < 25; i++) {
 }
 
 // Hitta vinnarbild
-vinnarPlats = bildkarta.findIndex((bild) => bild === "b3.png");
+vinnarPlats = bildkarta.findIndex((bild) => bild === "b1.png");
 
 function uppdateraSpelbild() {
   spelbildElement.src = `../images/${bildkarta[spelarPlats]}`;
@@ -53,6 +53,8 @@ window.onload = () => {
 
   kattPlats = slumpaRuta([spelarPlats]);
   gurliPlats = slumpaRuta([spelarPlats, kattPlats]);
+
+
 
   function uppdateraRutnät() {
     rutor.forEach((ruta, index) => {
@@ -108,7 +110,7 @@ window.onload = () => {
       uppdateraSpelbild();
       visaPopup();
     
-      // Tassie flyttar sig 1 steg
+      
       setTimeout(() => {
         kattPlats = flyttaFigur(kattPlats);
         uppdateraRutnät();
@@ -116,7 +118,7 @@ window.onload = () => {
         if (kattPlats === vinnarPlats) {
           visaKattVinst();
         }
-      }, 2000); // väntar i 2sek
+      }, 2000); 
     
       return;
     }
@@ -176,7 +178,7 @@ function stangPopup() {
 
 
 
-// Spelaren vinner
+
 function visaSpelarVinst() {
   document.getElementById("spelareVinnerPopup").style.display = "block";
   låst = true;
@@ -184,7 +186,7 @@ function visaSpelarVinst() {
 }
 
 
-//Tassie vinner
+
 function visaKattVinst() {
   document.getElementById("kattVinnerPopup").style.display = "block";
   låst = true;
